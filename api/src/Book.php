@@ -97,6 +97,7 @@ class Book
         $isUpdateOk = null;
 
         if (null != $title) {
+            $title = $conn->real_escape_string($title);
             $sql = "UPDATE books SET title='" . $title . "' WHERE id=" . $id;
             $result = $conn->query($sql);
             if (!$result) {
@@ -108,6 +109,7 @@ class Book
         }
 
         if (null != $author) {
+            $author = $conn->real_escape_string($author);
             $sql = "UPDATE books SET title='" . $author . "' WHERE id=" . $id;
             $result = $conn->query($sql);
             if (!$result) {
@@ -119,6 +121,7 @@ class Book
         }
 
         if (null != $description) {
+            $description = $conn->real_escape_string($description);
             $sql = "UPDATE books SET title='" . $description . "' WHERE id=" . $id;
             $result = $conn->query($sql);
             if (!$result) {
