@@ -1,4 +1,4 @@
-CREATE DATABASE BooksRent SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE BooksRent CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE `books` (
   `id` INT AUTO_INCREMENT,
