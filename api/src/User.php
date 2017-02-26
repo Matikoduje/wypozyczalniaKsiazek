@@ -3,8 +3,10 @@ class User
 {
     public function insertData()
     {
+        $secure = new CheckData();
         $context=new Context(new DataEntry());
-        $context->algorithm();
+        $secure->enterData();
+        $context->algorithm($secure->setEntry());
     }
     public function findData()
     {

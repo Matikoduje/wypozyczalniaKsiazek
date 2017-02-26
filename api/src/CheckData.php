@@ -4,7 +4,8 @@ class CheckData
 {
     private $conn;
     private $dataPack;
-    private $id;
+    private $field;
+    private $fieldValue;
     private $title;
     private $description;
     private $author;
@@ -13,6 +14,10 @@ class CheckData
     {
         $this->conn = new UniversalConnect();
         $this->conn = $this->conn->doConnect();
+        $this->title = $this->conn->real_escape_string($_POST['title']);
+        $this->description = $this->conn->real_escape_string($_POST['description']);
+        $this->author = $this->conn->real_escape_string($_POST['author']);
+        $this->dataPack = array($this->title, $this->author, $this->description);
         $this->conn->close();
     }
 
@@ -20,8 +25,9 @@ class CheckData
     {
         $this->conn = new UniversalConnect();
         $this->conn = $this->conn->doConnect();
-        $this->id = $this->conn->real_escape_string($_GET['id']);
-        $this->dataPack = array($this->id);
+        $this->field = $this->conn->real_escape_string($_GET['field']);
+        $this->fieldValue = $this->conn->real_escape_string($_GET['fieldValue']);
+        $this->dataPack = array($this->field, $this->fieldValue);
         $this->conn->close();
     }
 

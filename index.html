@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Informacje o książkach</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/app.js?a=6"></script>
 </head>
 <body>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
 
+    </div>
+</div>
+<div class="container">
+    <div class="page-header">
+        <div class="row text-center">
+            <br>
+            <h1>Lista książek</h1>
+            <p>Proszę kliknąć w książkę by uzyskać więcej informacji</p>
+        </div>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading" id="clickForm" style="text-align: center; "><span
+                                                                                     style="font-weight: bold">Dodaj książkę</span>
+        </div>
+        <div class="panel-body hideMyElements" id="hideForm">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="title">Tytuł:</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+                <div class="form-group">
+                    <label for="author">Autor:</label>
+                    <input type="text" class="form-control" id="author">
+                </div>
+                <div class="form-group">
+                    <label for="description">Opis:</label>
+                    <input type="text" class="form-control" id="description">
+                </div>
+                <button type="submit" class="btn btn-success">Dodaj Książkę</button>
+            </form>
+        </div>
+    </div>
+    <div id="error">
+    </div>
+    <br>
+    <div id="listBooks">
+
+    </div>
+</div>
 </body>
 </html>
