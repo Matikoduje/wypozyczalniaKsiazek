@@ -1,5 +1,5 @@
 <?php
-class Client
+class User
 {
     public function insertData()
     {
@@ -8,8 +8,10 @@ class Client
     }
     public function findData()
     {
+        $secure = new CheckData();
         $context=new Context(new SearchData());
-        $context->algorithm();
+        $secure->conductSearch();
+        $context->algorithm($secure->setEntry());
     }
     public function showAll()
     {

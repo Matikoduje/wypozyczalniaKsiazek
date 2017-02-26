@@ -15,9 +15,8 @@ class UniversalConnect implements IConnectInfo
         self::$conn=mysqli_connect(self::$server, self::$user, self::$pass, self::$currentDB);
         if(self::$conn) {
             self::$conn->query('SET NAMES `utf8`');
-            echo "Udane połączenie z bazą MySQL:<br/>";
         } else {
-            echo('Oto twój błąd: ' . mysqli_connect_error());
+            echo('Błąd połączenia z bazą danych: ' . mysqli_connect_error());
         }
         return self::$conn;
     }

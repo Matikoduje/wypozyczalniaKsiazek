@@ -3,9 +3,14 @@
 class SearchData implements IStrategy
 {
 
-    public function algorithm()
+    public function algorithm(Array $dataPack)
     {
-        // wyszukujemy po podanym ID !!
-        $conn = UniversalConnect::doConnect();
+        $this->tableName = IStrategy::TABLE_NAME;
+        $this->conn = new UniversalConnect();
+        $this->conn = $this->conn->doConnect();
+
+
+
+        $this->conn->close();
     }
 }
