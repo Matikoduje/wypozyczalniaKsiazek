@@ -22,7 +22,7 @@ class DataEntry implements IStrategy
         $result = $this->conn->query($this->sql);
 
         if ($result) {
-            echo "Wstawianie danych do tabeli $this->tableName zakończone sukcesem";
+            echo true;
         } else {
             echo "Błąd wstawiania danych: " . $this->conn->error;
         }

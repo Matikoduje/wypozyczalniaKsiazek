@@ -23,13 +23,18 @@ class User
     }
     public function changeData()
     {
+        $secure = new CheckData();
         $context=new Context(new UpdateData());
-        $context->algorithm();
+        $secure->makeChange();
+        $context->algorithm($secure->setEntry());
     }
-    public function killer()
+    public function delete()
     {
+        $secure=new CheckData();
         $context=new Context(new DeleteData());
-        $context->algorithm();
+        $secure->removeRecord();
+        $context->algorithm($secure->setEntry());
+
     }
 }
 ?>
