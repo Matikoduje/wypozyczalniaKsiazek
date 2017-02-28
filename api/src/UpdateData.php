@@ -2,7 +2,6 @@
 
 class UpdateData implements IStrategy
 {
-
     private $dataPack;
     private $conn;
     private $tableName;

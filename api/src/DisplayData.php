@@ -2,6 +2,7 @@
 
 class DisplayData implements IStrategy
 {
+
     private $tableName;
     private $conn;
     private $dataPack;

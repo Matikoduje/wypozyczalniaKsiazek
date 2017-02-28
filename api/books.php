@@ -6,13 +6,13 @@ function __autoload($className)
 }
 
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['field'],$_GET['fieldValue'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET' && !isset($_GET['field'], $_GET['fieldValue'])) {
         $showAll = new User();
         $showAll->showAll();
-    } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['field'],$_GET['fieldValue'])) {
+    } elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['field'], $_GET['fieldValue'])) {
         $search = new User();
         $search->findData();
-    } elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['author'],$_POST['description'],$_POST['title'])) {
+    } elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['author'], $_POST['description'], $_POST['title'])) {
         $addEntry = new User();
         $addEntry->insertData();
     } elseif ($_SERVER['REQUEST_METHOD'] === 'DELETE') {

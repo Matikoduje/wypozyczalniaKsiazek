@@ -33,6 +33,7 @@ $(document).ready(function () {
         $.ajax({
             url: 'api/books.php',
             method: 'GET',
+            cache: false,
             dataType: "json",
             success: function createList(data) {
                 var panel;
@@ -144,7 +145,7 @@ $(document).ready(function () {
                 var author = $('#author').prop('value');
                 var description = $('#description').prop('value');
 
-                if (validateForms(title,author,description) == false) {
+                if (validateForms(title, author, description) == false) {
                     event.preventDefault();
                 }
 
@@ -153,6 +154,9 @@ $(document).ready(function () {
                     method: 'POST',
                     dataType: "json",
                     data: {title: title, author: author, description: description},
+                    success: function (data) {
+                        getAllBooks();
+                    },
                     error: function (data) {
                         error.text(data);
                         $('#error').append(error);
@@ -190,7 +194,7 @@ $(document).ready(function () {
         var description = formUpdate.find('#descriptionForm').prop('value');
         var id = formUpdate.attr('data-id');
 
-        if (validateForms(title,author,description) == false) {
+        if (validateForms(title, author, description) == false) {
             event.preventDefault();
         }
 

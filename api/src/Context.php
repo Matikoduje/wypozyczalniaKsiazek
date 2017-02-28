@@ -1,4 +1,5 @@
 <?php
+
 class Context
 {
     private $strategy;
@@ -8,10 +9,12 @@ class Context
     {
         $this->strategy = $strategy;
     }
+
     public function algorithm(Array $dataPack)
     {
         $this->dataPack = $dataPack;
         $this->strategy->algorithm($this->dataPack);
     }
 }
+
 ?>

@@ -2,6 +2,7 @@
 
 class SearchData implements IStrategy
 {
+
     private $dataPack;
     private $conn;
     private $tableName;

@@ -36,7 +36,7 @@ class CheckData
     {
         $this->conn = new UniversalConnect();
         $this->conn = $this->conn->doConnect();
-        parse_str(file_get_contents("php://input"),$delVars); // uzyskujemy dane przesłane metodą DELETE
+        parse_str(file_get_contents("php://input"), $delVars); // uzyskujemy dane przesłane metodą DELETE
         $this->id = $this->conn->real_escape_string($delVars['delete']);
         $this->dataPack = array($this->id);
         $this->conn->close();
@@ -46,7 +46,7 @@ class CheckData
     {
         $this->conn = new UniversalConnect();
         $this->conn = $this->conn->doConnect();
-        parse_str(file_get_contents("php://input"),$putVars);
+        parse_str(file_get_contents("php://input"), $putVars);
         $this->title = $this->conn->real_escape_string($putVars['title']);
         $this->description = $this->conn->real_escape_string($putVars['description']);
         $this->author = $this->conn->real_escape_string($putVars['author']);

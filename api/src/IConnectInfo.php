@@ -1,4 +1,5 @@
 <?php
+
 interface IConnectInfo
 {
     const DB_HOST = 'localhost';

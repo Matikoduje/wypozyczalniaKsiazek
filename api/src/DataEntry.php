@@ -2,6 +2,7 @@
 
 class DataEntry implements IStrategy
 {
+
     private $dataPack;
     private $conn;
     private $tableName;

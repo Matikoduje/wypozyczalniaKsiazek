@@ -2,6 +2,7 @@
 
 class DeleteData implements IStrategy
 {
+
     private $dataPack;
     private $conn;
     private $tableName;
